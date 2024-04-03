@@ -16,6 +16,8 @@
 
 ## :star2: About the Project
 
+![Screenshot (131)](https://github.com/Cshiva773/shivai/assets/104835495/c011d657-e808-4fde-973e-65b675769885)
+
 
 ### :dart: Features
 - Generate AI Image
