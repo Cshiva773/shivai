@@ -1,6 +1,6 @@
 <div align='center'>
 
-<h1>AI Image generator</h1>
+<h1>SHIVAI : AI Image generator</h1>
 <p>AI image generator using Dall-E openAI API</p>
 
 <h4> <a href=https://shivai-cxiz9lbuh-cshiva773s-projects.vercel.app/>Live Demo</a> 
@@ -15,11 +15,6 @@
 
 
 ## :star2: About the Project
-
-### :camera: Screenshots
-<div align="center"> <a href="https://shivai-cxiz9lbuh-cshiva773s-projects.vercel.app/"><img src="![Screenshot (131)](https://github.com/Cshiva773/shivai/assets/104835495/3044a12e-7c29-4dbe-b557-fa2f85d79a3b)
-" alt='image' width='800'/></div>
-
 
 
 ### :dart: Features
