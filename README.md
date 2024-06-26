@@ -1,7 +1,7 @@
 <div align='center'>
 
 <h1>SHIVAI : AI Image generator</h1>
-<p>AI image generator using Dall-E openAI API</p>
+<p>AI image generator using Dall-E OpenAI API and with our custom API</p>
 
 <h4> <a href=https://shivai-cxiz9lbuh-cshiva773s-projects.vercel.app/>Live Demo</a> 
 
@@ -20,7 +20,8 @@
 
 
 ### :dart: Features
-- Generate AI Image
+- Generate AI Image using Dall-E API
+- Generate AI Images using custom API
 - Share AI Image
 - Download shared AI Image
 - Search shared AI Image
