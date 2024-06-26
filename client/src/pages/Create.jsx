@@ -13,6 +13,7 @@ export default function Create() {
     photo: '',
   })
   const [generatingImage, setGeneratingImage] = useState(false);
+  const [generatingImageLocal, setGeneratingImageLocal] = useState(false);
   const [loading, setLoading] = useState(false);
   const handleSubmit = async (e) => {
     e.preventDefault();
@@ -38,6 +39,35 @@ export default function Create() {
       }
     } else {
       alert('Please generate an image with proper details');
+    }
+  };
+
+  const generateImageLocal = async () => {
+    if (form.prompt) {
+      try {
+        setGeneratingImageLocal(true);
+        const response = await fetch('http://localhost:8080/api/v1/localai', {
+          method: 'POST',
+          headers: {
+            'Content-Type': 'application/json',
+          },
+          body: JSON.stringify({ prompt: form.prompt }),
+        });
+        
+        if (!response.ok) {
+          throw new Error(`HTTP error! status: ${response.status}`);
+        }
+        
+        const data = await response.json();
+        setForm({ ...form, photo: `data:image/jpeg;base64,${data.photo}` });
+      } catch (error) {
+        console.error('Error generating image:', error.message);
+        alert('An error occurred while generating the image. Please try again.');
+      } finally {
+        setGeneratingImageLocal(false);
+      }
+    } else {
+      alert('Please enter a prompt');
     }
   };
 
@@ -118,6 +148,13 @@ export default function Create() {
             className='mt-6 w-full py-4 px-6 bg-blue-500 hover:bg-blue-600 focus:bg-blue-600 rounded-md text-white font-semibold text-lg focus:outline-none focus:ring-2 focus:ring-blue-500 focus:ring-offset-2 transition-colors duration-300 ease-in-out'
           >
             {generatingImage ? 'Generating...' : 'Generate Artwork'}
+          </button>
+          <button
+            type='button'
+            onClick={generateImageLocal}
+            className='mt-6 text-white bg-[#6469ff] font-medium rounded-md text-sm w-full sm:w-auto px-5 py-2.5 text-center'
+          >
+            {generatingImageLocal ? 'Generating...' : 'Generate with our own AI MODEL'}
           </button>
           <button
             type='submit'
