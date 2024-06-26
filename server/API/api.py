@@ -1,4 +1,3 @@
-from auth_token import auth_token
 from fastapi import FastAPI,Response
 from fastapi.middleware.cors import CORSMiddleware
 import torch
@@ -6,6 +5,11 @@ from torch import autocast
 from diffusers import StableDiffusionPipeline
 from io import BytesIO
 import base64
+from dotenv import load_dotenv
+import os
+load_dotenv()
+auth_token = os.getenv("HUGGING_FACE_API_TOKEN")
+
 
 app=FastAPI()
 
